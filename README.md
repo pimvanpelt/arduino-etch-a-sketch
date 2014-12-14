@@ -20,4 +20,7 @@ a library for the SH1103 display on the Arduino forum:
   http://forum.arduino.cc/index.php?topic=242880.0
 
 I included a Fritzing schematic (See the .fzz and .png files in this directory).
+You can see my daughter's build of this project on Google+ here:
+https://plus.google.com/u/1/+PimvanPelt/posts/bfUtEmZWoPG
+
 Enjoy!
