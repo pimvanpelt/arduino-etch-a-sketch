@@ -1,3 +1,10 @@
+/*
+ * This sketch uses an SH1106 128x86 pixel monochrome oled display which you
+ * can find here: http://forum.arduino.cc/index.php?topic=242880.0
+ * The display itself is available on ebay for approximately USD 7.50
+ *
+ * Copyright (C) 2014 - Pim van Pelt <pim@ipng.nl>
+ */
 #include <SPI.h>
 #include "SH1106_SPI.h"
 
@@ -5,6 +12,8 @@ SH1106_SPI_FB lcd;
 
 #define BUTTON_LEFT  4
 #define BUTTON_RIGHT 5
+
+#define SERIAL_UPDATE_INTERVAL_MILLIS 1000
 
 void setup(void)
 {
@@ -23,6 +32,8 @@ void setup(void)
 
 void drawCursor(int h, int v)
 {
+  // TODO(pim): Overlay a crosshair on the cursor so we know where we are if
+  //            the pen is up.
 }
 
 void drawClear(void)
@@ -68,8 +79,9 @@ void loop(void)
     Serial.println(penDown ? "down" : "up");
     Serial.print("H="); Serial.println(H);
     Serial.print("V="); Serial.println(V);
-    next_serial_timestamp = millis() + 1000;
+    next_serial_timestamp = millis() + SERIAL_UPDATE_INTERVAL_MILLIS;
   }
+
   drawCursor(H, V);
   if (penDown) {
     lcd.setPixel(H, V, 255);
