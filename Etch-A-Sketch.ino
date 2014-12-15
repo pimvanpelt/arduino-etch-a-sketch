@@ -1,5 +1,5 @@
 /*
- * This sketch uses an SH1106 128x86 pixel monochrome oled display which you
+ * This sketch uses an SH1106 128x64 pixel monochrome oled display which you
  * can find here: http://forum.arduino.cc/index.php?topic=242880.0
  * The display itself is available on ebay for approximately USD 7.50
  *
